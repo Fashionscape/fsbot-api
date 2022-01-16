@@ -1,0 +1,38 @@
+# GraphQL schema example
+#
+# https://gqlgen.com/getting-started/
+scalar Date
+
+type Outfit {
+  id: ID!
+  link: String!
+  submitter: String!
+  tag: String!
+  meta: String
+  created: Date!
+  updated: Date!
+  deleted: Boolean!
+  featured: Boolean!
+  delete_hash: String!
+}
+
+type Query {
+  getOutfit(outfitID: String!): Outfit!
+  getRandomOutfit: Outfit!
+}
+
+input InputOutfit {
+  id: String!
+  link: String!
+  submitter: String!
+  tag: String!
+  meta: String
+  deleted: Boolean!
+  featured: Boolean!
+  delete_hash: String!
+}
+
+type Mutation {
+  createOutfit(input: InputOutfit!): Outfit!
+  updateOutfit(input: InputOutfit!): Outfit!
+}
