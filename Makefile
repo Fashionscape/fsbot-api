@@ -35,3 +35,6 @@ deps:
 
 format:
 	gofmt -w .
+
+gqlgen:
+	${GORUN} github.com/99designs/gqlgen generate
